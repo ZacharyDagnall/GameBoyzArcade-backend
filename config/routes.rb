@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get "/games/:id", to: "games#show"
+  patch "/games/:id", to: "games#update"
 
   # resources :games
   # resources :users

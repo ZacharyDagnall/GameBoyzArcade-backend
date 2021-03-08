@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 bb = User.create(name: "Bingo Bongo")
-Game.create(user:bb, board_state: [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]], game_over: false, score: 0)
+Game.create(user:bb, board_state: [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]], game_over: false, score: 100)
+Game.create(user:bb, board_state: [[0,3,0,6],[3,0,0,3],[0,6,0,3],[6,0,6,0]], game_over: false, score: 100)
