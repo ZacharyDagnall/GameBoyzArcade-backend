@@ -16,6 +16,12 @@ class UsersController < ApplicationController
         render json: @game
     end
 
+    def scores
+        @user = User.find(params[:id])
+        @scores = @user.scores
+        render json: @scores
+    end
+
 
     private 
     
