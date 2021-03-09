@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get "/games/:id", to: "games#show"
   patch "/games/:id", to: "games#update"
 
-  get "/users" to: "user#index"
-  post "/users" to: "user#create"
+  get "/users", to: "users#index"
+  post "/users", to: "users#create"
+  get "/users/:id/nextgame/:name", to: "users#nextgame"
 
   # resources :games
   # resources :users

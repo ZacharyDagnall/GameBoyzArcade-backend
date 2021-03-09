@@ -7,8 +7,14 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params) 
+        render json: @user
     end
 
+    def nextgame
+        @user = User.find(params[:id])
+        @game = @user.next_game(params[:name])
+        render json: @game
+    end
 
 
     private 

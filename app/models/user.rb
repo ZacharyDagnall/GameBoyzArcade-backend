@@ -1,7 +1,8 @@
 class User < ApplicationRecord
     has_many :games
 
-    def find_open_game(name_of_the_game)
-        self.games.find{|game| game.name == name_of_the_game && !game.game_over}
+    def next_game(name_of_the_game)     # this method finds an existing open game (of the given type), or creates a new one if none exist
+        open_game = self.games.find{|game| game.name == name_of_the_game && !game.game_over}
+        open_game ? open_game : Game.create(user: self, name: name_of_the_game)
     end
 end
