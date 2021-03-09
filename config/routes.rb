@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/users", to: "users#index"
   post "/users", to: "users#create"
   get "/users/:id/nextgame/:name", to: "users#nextgame"
+  get "/users/:id/scores", to: "users#scores" 
 
   # resources :games
   # resources :users
