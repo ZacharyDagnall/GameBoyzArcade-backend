@@ -6,14 +6,24 @@ class Game < ApplicationRecord
       attr_with_defaults = {board_state: [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], game_over: false, score: 0}.merge(attributes)
       super(attr_with_defaults)
 
-    else attributes[:name] == "TicTacToe" 
+    elsif attributes[:name] == "TicTacToe" 
       attr_with_defaults = {board_state: [[0,0,0],[0,0,0],[0,0,0]], game_over: false, score: 0}.merge(attributes)
-    super(attr_with_defaults)
+      super(attr_with_defaults)
 
-  # else attributes[:name] == "TicTacToe" 
-  #   attr_with_defaults = {board_state: [[0,0,0],[0,0,0],[0,0,0]], game_over: false, score: 0}.merge(attributes)
-  # super(attr_with_defaults)
+    elsif attributes[:name] == "LightsOut" 
+      attr_with_defaults = {board_state: [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]], game_over: false, score: 0}.merge(attributes)
+      super(attr_with_defaults)
+
+    elsif attributes[:name] == "FibonacciTiles"
+      attr_with_defaults = {board_state: [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], game_over: false, score: 0}.merge(attributes)
+      super(attr_with_defaults)
+
+    elsif attributes[:name] == "Connect4"
+      attr_with_defaults = {board_state: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]], game_over: false, score: 0}.merge(attributes)
+      super(attr_with_defaults)
+
     end
+    
   end
 
 end
