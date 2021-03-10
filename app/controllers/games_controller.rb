@@ -13,6 +13,18 @@ class GamesController < ApplicationController
         render json: @game
     end
 
+    def leaderboard
+        @scores = Game.all.where(name: params[:name]).map{|game| "#{game.user.name}: #{game.score}"}
+        render json: @scores
+    end
+
+    def destroy
+        @game = Game.find(params[:id])
+        @game.destroy
+        render json: {}
+    end
+
+
     private
     def game_params
         # byebug

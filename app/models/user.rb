@@ -8,7 +8,13 @@ class User < ApplicationRecord
 
     def scores
         blah = self.games.where(game_over: true)
-        blah.map{|game| "game:#{game.name}, score: #{game.score}"}
+        blah.map do |game|
+            hash = Hash.new
+            hash[:name]= game.name
+            hash[:score] =game.score
+            hash[:id]= game.id
+            hash
+        end
     end
 end
 
