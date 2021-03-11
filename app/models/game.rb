@@ -18,6 +18,10 @@ class Game < ApplicationRecord
       attr_with_defaults = {board_state: [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], game_over: false, score: 0}.merge(attributes)
       super(attr_with_defaults)
 
+    elsif attributes[:name] == "6144BugMode"
+      attr_with_defaults = {board_state: [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], game_over: false, score: 42}.merge(attributes)
+      super(attr_with_defaults)
+
     elsif attributes[:name] == "Connect4"
       attr_with_defaults = {board_state: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]], game_over: false, score: 500}.merge(attributes)
       super(attr_with_defaults)
