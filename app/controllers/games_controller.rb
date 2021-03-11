@@ -14,7 +14,7 @@ class GamesController < ApplicationController
     end
 
     def leaderboard
-        @scores = Game.all.where(name: params[:name]).map{|game| "#{game.user.name}: #{game.score}"}
+        @scores = Game.leaderboard(params[:name])
         render json: @scores
     end
 

@@ -30,4 +30,8 @@ class Game < ApplicationRecord
     
   end
 
+  def self.leaderboard(name_input)
+    Game.all.where(name: name_input, game_over: true).max_by(10){|game| game.score}.map{|game| "#{game.user.name}: #{game.score}"}
+  end
+
 end
