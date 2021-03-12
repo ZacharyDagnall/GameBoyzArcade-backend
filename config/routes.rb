@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   patch "/games/:id", to: "games#update"
   get "/games/:name/leaderboard", to: "games#leaderboard"
   delete "/games/:id", to: "games#destroy"
+  get "/games/rules/:name", to: "games#rules"
 
   get "/users", to: "users#index"
   post "/users", to: "users#create"

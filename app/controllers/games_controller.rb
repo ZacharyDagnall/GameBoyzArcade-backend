@@ -24,6 +24,11 @@ class GamesController < ApplicationController
         render json: {}
     end
 
+    def rules
+        @rules = Game.rules(params[:name])
+        render json: @rules
+    end
+
 
     private
     def game_params
