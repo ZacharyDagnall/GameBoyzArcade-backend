@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root to: "welcome#link"
+
   get "/games/:id", to: "games#show"
   patch "/games/:id", to: "games#update"
   get "/games/:name/leaderboard", to: "games#leaderboard"
